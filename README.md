@@ -1,4 +1,5 @@
 # Merck Future of AI Challenge submission
+https://app.ekipa.de/challenge/future-of-ai/about
 
 ## Project name: 
 IRENA (Invariant Representations Extraction in Neural Architectures)
@@ -16,21 +17,32 @@ Using cortical maps as neural substrate for distributed representations of senso
 ## Quick Start
 
 1-Download the whole files from the link:
+
 https://drive.google.com/open?id=1vc4GqEuqHbVYKR0V2GOBXOfdZLt7ru_s
 
 Test step:
 
 1-Set train = 0 in config_FGV.txt(config_IG.txt)
-2-Run python3 trainFGV_dense.py
-      python3 trainFGV_sparse.py
-      python3 trainIG.py
+
+2-Run
+
+python3 trainFGV_dense.py
+
+python3 trainFGV_sparse.py
+
+python3 trainIG.py
 
 
 Train step:
 
 1-Set train = 1 in config_FGV.txt(config_IG.txt)
-2-Run python3 trainFGV_dense.py
-      python3 trainFGV_sparse.py
-      python3 trainIG.py
+
+2-Run
+
+python3 trainFGV_dense.py
+
+python3 trainFGV_sparse.py
+
+python3 trainIG.py
 
 
