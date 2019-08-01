@@ -124,22 +124,23 @@ class picprocess():
         
         
         # load the test picture
-        Gx,Gy,F,V = self.generateGxGyVF()
+#        Gx,Gy,F,V = self.generateGxGyVF()
+        Gx,Gy,F,V =  self.loadGxyvUxy('video/DxyvUxy/train_data2.pkl')
         gxyv,fxy = self.generatetraindata(Gx,Gy,F,V)
     
         sensory_x = gxyv / 255.0
         
         # load the model
-        with open('Weight data/train_vgf_dense/populations_Wcross299.pkl','rb') as file:
+        with open('populations_Wcross99.pkl','rb') as file:
             population_Wcross = pickle.load(file)
             
-        with open('Weight data/train_vgf_dense/populations_Winput299.pkl','rb') as file1:
+        with open('populations_Winput99.pkl','rb') as file1:
             population_Winput = pickle.load(file1)
             
-        with open('Weight data/train_vgf_dense/population_Winput_1299.pkl','rb') as file2:
+        with open('population_Winput_199.pkl','rb') as file2:
             population_Winput_1 = pickle.load(file2)
             
-        with open('Weight data/train_vgf_dense/populations_s299.pkl','rb') as file3:
+        with open('populations_s99.pkl','rb') as file3:
             population_s = pickle.load(file3)
         
         # show the HL matrix
@@ -165,7 +166,7 @@ class picprocess():
         # rebuild the optical flow picture 
         flow = pic_data.rebuildflow(x_drection)
         pic_data.showFlowpic(flow)
-        pic_data.showexpectedflowpic('pic_F/250.pkl')
+        pic_data.showexpectedflowpic('video/DxyvUxy/train_data2.pkl')
 
 
     def parametrize_learning_law(self, v0, vf, t0, tf):
@@ -175,12 +176,34 @@ class picprocess():
         A = v0*t0 + B*v0
         y = [A/(t[i]+B) for i in range(len(t))]
         return y
+    
+    
+    def loadGxyvUxy(self,pklpath):
+        Gx = []
+        Gy = []
+        F = []
+        V = []
+        
+        with open(pklpath,'rb') as outfile:
+            DxyvUxy = pickle.load(outfile)
+        Gx.append(DxyvUxy[0][0])
+        Gy.append(DxyvUxy[0][1])
+        F.append(DxyvUxy[0][3])
+        V.append(DxyvUxy[0][2])
+        
+        return Gx,Gy,F,V
 
     def speed_up_som(self):
         
+#        train_da =  self.loadGxyvUxy('video/DxyvUxy/train_data2.pkl')
+        
         # get the training data
-        Gx,Gy,F,V = self.generateGxGyVF()
+        Gx,Gy,F,V =  self.loadGxyvUxy('train_data/train_data2.pkl')
+#        Gx,Gy,F,V = self.generateGxGyVF()
         gxyv,fxy = self.generatetraindata(Gx,Gy,F,V)
+        
+        
+        
         
         # Normalize the data
         sensory_x = gxyv / 255.0
