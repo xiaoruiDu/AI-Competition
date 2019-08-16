@@ -125,26 +125,48 @@ class picprocess():
         
         # load the test picture
 #        Gx,Gy,F,V = self.generateGxGyVF()
-        Gx,Gy,F,V =  self.loadGxyvUxy('video/DxyvUxy/train_data2.pkl')
+        Gx,Gy,F,V =  self.loadGxyvUxy('training_data/video/pic_ori(250_250_uniform_motion_stablescence)_version2/DxyvUxy/train_data196.pkl')
         gxyv,fxy = self.generatetraindata(Gx,Gy,F,V)
+        Gx1,Gy1,F1,V1 = self.loadGxyvUxy('training_data/video/pic_ori(250_250_(simple)_one_move_white_backgroud_xdirection)/DxyvUxy/train_data12.pkl')
+        gxyv1,fxy1 = self.generatetraindata(Gx1,Gy1,F1,V1)
     
         sensory_x = gxyv / 255.0
+        sensory_x1 = gxyv / 255.0
         
         # load the model
-        with open('populations_Wcross99.pkl','rb') as file:
+#        with open('populations_Wcross399.pkl','rb') as file:
+#            population_Wcross = pickle.load(file)
+#            
+#        with open('populations_Winput399.pkl','rb') as file1:
+#            population_Winput = pickle.load(file1)
+#            
+#        with open('population_Winput_1399.pkl','rb') as file2:
+#            population_Winput_1 = pickle.load(file2)
+#            
+#        with open('populations_s399.pkl','rb') as file3:
+#            population_s = pickle.load(file3)
+            
+        with open('weights/pic_ori(250_250_(simple)_one_move_white_backgroud_xdirection)/populations_Wcross599.pkl','rb') as file:
             population_Wcross = pickle.load(file)
             
-        with open('populations_Winput99.pkl','rb') as file1:
+        with open('weights/pic_ori(250_250_(simple)_one_move_white_backgroud_xdirection)/populations_Winput599.pkl','rb') as file1:
             population_Winput = pickle.load(file1)
             
-        with open('population_Winput_199.pkl','rb') as file2:
+        with open('weights/pic_ori(250_250_(simple)_one_move_white_backgroud_xdirection)/population_Winput_1599.pkl','rb') as file2:
             population_Winput_1 = pickle.load(file2)
             
-        with open('populations_s99.pkl','rb') as file3:
-            population_s = pickle.load(file3)
+        with open('weights/pic_ori(250_250_(simple)_one_move_white_backgroud_xdirection)/populations_s599.pkl','rb') as file3:
+            population_s = pickle.load(file3)        
+        
+        pic_data.draw2Dpic(population_Winput_1,fxy1)
+        pic_data.draw3Dpic(population_Winput,sensory_x1)
+
         
         # show the HL matrix
+        
+        fig2 = plt.figure('HL matrix')
         plt.imshow(population_Wcross)
+        
         x_drection = []
         for i in range(sensory_x.shape[0]):
         
@@ -162,11 +184,47 @@ class picprocess():
             # decode the HL matrix
             a1 = population_Winput_1[pre_pos]
             x_drection.append(a1)
-        x_drection = np.array(x_drection)
+            
+        x_drection_np = np.array(x_drection)       
         # rebuild the optical flow picture 
-        flow = pic_data.rebuildflow(x_drection)
+        flow = pic_data.rebuildflow(x_drection_np)
+        
+        ori = cv2.imread('training_data/video/pic_ori(250_250_uniform_motion_stablescence)_version2/196.jpg')
+        ori_2 = cv2.imread('training_data/video/pic_ori(250_250_uniform_motion_stablescence)_version2/197.jpg')
+        
+        add_frame1_frame2 = cv2.addWeighted(ori,0.5,ori_2,0.5,0)
+        cv2.imshow('frame1_frame2',add_frame1_frame2)
+        
+        cv2.imshow('frame1',ori)
+        mask = np.zeros_like(ori)
+        print(mask.shape)
+        cont = 1
+        
+        for row in range(mask.shape[0]):
+            for col in range(mask.shape[1]):
+                if abs(flow[...,0][row,col]) >= 1 or abs(flow[...,1][row,col]) >=1:
+                    x_max = int(col + round(flow[...,0][row,col]))
+                    y_max = int(row + round(flow[...,1][row,col]))
+                    if x_max < mask.shape[1] and x_max >= 0 and y_max < mask.shape[0] and y_max >= 0:
+                        ori[y_max,x_max,0] = 255
+                        ori[y_max,x_max,1] = 0
+                        ori[y_max,x_max,2] = 0
+                        if ori[row,col,0] == 255 and ori[row,col,1] == 0 and ori[row,col,2] == 0:
+#                            
+                            ori[row,col,0] = 0
+                            ori[row,col,1] = 0
+                            ori[row,col,2] = 255
+                        else:
+                            ori[row,col,0] = 0
+                            ori[row,col,1] = 255
+                            ori[row,col,2] = 0
+                        cont+=1
+        print(cont)
+        cv2.imwrite('Optical_Flow.jpg',ori)
+        cv2.imshow('Overlap_Optical_flow',ori)
+        # rebuild the optical flow picture 
         pic_data.showFlowpic(flow)
-        pic_data.showexpectedflowpic('video/DxyvUxy/train_data2.pkl')
+        pic_data.showexpectedflowpic('training_data/video/pic_ori(250_250_uniform_motion_stablescence)_version2/DxyvUxy/train_data196.pkl')
 
 
     def parametrize_learning_law(self, v0, vf, t0, tf):
@@ -198,12 +256,9 @@ class picprocess():
 #        train_da =  self.loadGxyvUxy('video/DxyvUxy/train_data2.pkl')
         
         # get the training data
-        Gx,Gy,F,V =  self.loadGxyvUxy('train_data/train_data2.pkl')
+        Gx,Gy,F,V =  self.loadGxyvUxy('training_data/video/pic_ori(250_250_(simple)_uniform_motion_xydirection)/DxyvUxy/train_data17.pkl')
 #        Gx,Gy,F,V = self.generateGxGyVF()
         gxyv,fxy = self.generatetraindata(Gx,Gy,F,V)
-        
-        
-        
         
         # Normalize the data
         sensory_x = gxyv / 255.0
@@ -331,7 +386,7 @@ class picprocess():
                 avg_act_1[:,0] = (1-OMEGA)*avg_act_1[:, 0] + OMEGA*population_a_1[:,0]
                 
                 population_Wcross = (1-XI)*population_Wcross + XI*(population_a - avg_act[:, 0].reshape(N_NEURONS,1))*(population_a_1 - avg_act_1[:, 0].reshape(N_NEURONS_1,1)).T
-            if t%50 == 49:
+            if t%5 == 4:
                 # save the model
                 with open('populations_Wcross{}.pkl'.format(t),'wb') as output:
                     pickle.dump(population_Wcross,output)

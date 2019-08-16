@@ -85,16 +85,16 @@ class picprocess():
         sensory_y = sensory_y.reshape(-1,1)
         
         # load the model
-        with open('Weight data/car__train_1000_1000/populations_Wcross152.pkl','rb') as file:
+        with open('Weight data/Train_IG_weight/populations_Wcross599.pkl','rb') as file:
             population_Wcross = pickle.load(file)
         
-        with open('Weight data/car__train_1000_1000/populations_Winput152.pkl','rb') as file1:
+        with open('Weight data/Train_IG_weight/populations_Winput599.pkl','rb') as file1:
             population_Winput = pickle.load(file1)
             
-        with open('Weight data/car__train_1000_1000/population_Winput_1152.pkl','rb') as file2:
+        with open('Weight data/Train_IG_weight/population_Winput_1599.pkl','rb') as file2:
             population_Winput_1 = pickle.load(file2)
 
-        with open('Weight data/car__train_1000_1000/populations_s152.pkl','rb') as file3:
+        with open('Weight data/Train_IG_weight/populations_s599.pkl','rb') as file3:
             population_s = pickle.load(file3)
 
         # show the HL matrix
