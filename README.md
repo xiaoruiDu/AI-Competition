@@ -18,7 +18,7 @@ Using cortical maps as neural substrate for distributed representations of senso
 
 1-Download the whole files from the link:
 
-https://drive.google.com/open?id=1vc4GqEuqHbVYKR0V2GOBXOfdZLt7ru_s
+https://drive.google.com/open?id=1I6a21i7N86tNrdttCgA19UEJR9vV_SUQ
 
 Test step:
 
@@ -28,9 +28,11 @@ Test step:
 
 python3 trainFGV_dense.py
 
-python3 trainFGV_sparse.py
-
 python3 trainIG.py
+
+Note: 
+
+After runing, you will get results in test_results folder
 
 
 Train step:
@@ -41,8 +43,10 @@ Train step:
 
 python3 trainFGV_dense.py
 
-python3 trainFGV_sparse.py
-
 python3 trainIG.py
+
+Note: 
+
+After runing, you will get .pkl files in the current folder.
 
 
