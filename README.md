@@ -87,6 +87,10 @@ Reconstructed Dx image
 
 Expected Dx image	
 
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/2.jpg"/></div>
+
+HL matrix of IG
+
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg"/></div>
 
 **Note:**
@@ -102,9 +106,8 @@ Expected Dx image
 
 	2.Run
 
-	        python3 trainFGV_dense.py
-
-       		python3 trainIG.py
+	python3 trainFGV_dense.py
+	python3 trainIG.py
 
 **Note:**
 
