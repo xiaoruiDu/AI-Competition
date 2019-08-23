@@ -27,27 +27,28 @@ Test step:
 	2-Run
 
 	        python3 trainFGV_dense.py
-	
+
+
 	Distribution_of_DxDyV
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg)
 	Distribution_of_FxFy
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg)
 	HL matrix of FxFy & GV
-	![image]https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg)
 	Final image.
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg)
 	Expected optical flow
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg)
 	Recibstrycted optical flow
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg)
 	
 
 	        python3 trainIG.py
 	
 	Reconstructed Dx image
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg)
 	Expected Dx Image	
-	![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg)
+![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg)
 
 	Note: 
 
