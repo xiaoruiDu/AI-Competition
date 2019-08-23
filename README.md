@@ -16,7 +16,7 @@ Using cortical maps as neural substrate for distributed representations of senso
 
 ## Quick Start
 
-### How to run 1D experiment.
+### 1- How to run 1D experiment.
 
 - cd to the 1D_experiment folder.
 
@@ -35,7 +35,7 @@ if you want speed up the training process, you can click the Visua_off button.
 
 
 
-### How to run image process.
+### 2- How to run image process.
 
 - Download the whole files from the link:
 
