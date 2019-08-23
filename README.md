@@ -16,24 +16,45 @@ Using cortical maps as neural substrate for distributed representations of senso
 
 ## Quick Start
 
-1-Download the whole files from the link:
+### How to run 1D experiment.
+
+- cd to the 1D_experiment folder.
+
+- run python3 main.py.
+
+- click the Visua_on button.
+
+- click the start button.
+
+
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/1.png"/></div>
+
+**Note:**
+
+if you want speed up the training process, you can click the Visua_off button.
+
+
+
+### How to run image process.
+
+- Download the whole files from the link:
 
 https://drive.google.com/open?id=1I6a21i7N86tNrdttCgA19UEJR9vV_SUQ
 
-Test step:
+- Test step:
 
-	1-Set train = 0 in config_FGV.txt(config_IG.txt)
+	1.Set train = 0 in config_FGV.txt(config_IG.txt)
 
-	2-Run
+	2.Run
+	    
+	        **python3 trainFGV_dense.py**
 
-	        python3 trainFGV_dense.py
 
-
-	Distribution_of_DxDyV
+	Distribution of DxDyV
 
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg"/></div>
 
-	Distribution_of_FxFy
+	Distribution of FxFy
 
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg"/></div>
 
@@ -45,43 +66,51 @@ Test step:
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg"/></div>
 
-	Expected optical flow
+	Expected optical flow image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg"/></div>
 
-	Recibstrycted optical flow
+	Reconstructed optical flow image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg"/></div>
 
 	
 
-	        python3 trainIG.py
+	        **python3 trainIG.py**
 	
 	Reconstructed Dx image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg"/></div>
 
-	Expected Dx Image	
+	Expected Dx image	
 
-<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg"/></div>
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg"/></div>
 
-	Note: 
+	**Note:**
 
 	After runing, you will get results in test_results folder
 
 
-Train step:
+- Train step:
 
-	1-Set train = 1 in config_FGV.txt(config_IG.txt)
+	1.Set train = 1 in config_FGV.txt(config_IG.txt)
 
-	2-Run
+	2.Run
 
-	        python3 trainFGV_dense.py
+	        **python3 trainFGV_dense.py**
 
-       		python3 trainIG.py
+       		**python3 trainIG.py**
 
-	Note: 
+	**Note:** 
 
 	After runing, you will get .pkl files in the current folder.
+
+
+
+
+
+
+
+
 
 
