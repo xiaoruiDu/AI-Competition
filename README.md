@@ -47,48 +47,53 @@ https://drive.google.com/open?id=1I6a21i7N86tNrdttCgA19UEJR9vV_SUQ
 
 	2.Run
 	    
-	        **python3 trainFGV_dense.py**
+	        python3 trainFGV_dense.py
 
 
-	Distribution of DxDyV
+Distribution of DxDyV
 
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg"/></div>
 
-	Distribution of FxFy
+Distribution of FxFy
 
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg"/></div>
 
-	HL matrix of FxFy & GV
+HL matrix of FxFy & GV
 
-<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg"/></div>
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg"/></div>
 
-	Final image.
+Final image.
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg"/></div>
 
-	Expected optical flow image
+Expected optical flow image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg"/></div>
 
-	Reconstructed optical flow image
+Reconstructed optical flow image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg"/></div>
 
 	
 
-	        **python3 trainIG.py**
+
+
+	        python3 trainIG.py
+
 	
-	Reconstructed Dx image
+Reconstructed Dx image
 
 <div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg"/></div>
 
-	Expected Dx image	
+Expected Dx image	
 
 <div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg"/></div>
 
-	**Note:**
+**Note:**
 
 	After runing, you will get results in test_results folder
+
+
 
 
 - Train step:
@@ -97,11 +102,11 @@ https://drive.google.com/open?id=1I6a21i7N86tNrdttCgA19UEJR9vV_SUQ
 
 	2.Run
 
-	        **python3 trainFGV_dense.py**
+	        python3 trainFGV_dense.py
 
-       		**python3 trainIG.py**
+       		python3 trainIG.py
 
-	**Note:** 
+**Note:**
 
 	After runing, you will get .pkl files in the current folder.
 
