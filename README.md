@@ -30,7 +30,8 @@ Test step:
 
 
 	Distribution_of_DxDyV
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg)
+
+<div align=center><img width="150" height="150" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg"/></div>
 	Distribution_of_FxFy
 ![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg)
 	HL matrix of FxFy & GV
