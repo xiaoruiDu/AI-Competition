@@ -31,25 +31,39 @@ Test step:
 
 	Distribution_of_DxDyV
 
-<div align=center><img width="150" height="150" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg"/></div>
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_DxDyV.jpg"/></div>
+
 	Distribution_of_FxFy
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg)
+
+<div align=center><img width="320" height="240" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Distribution_of_FxFy.jpg"/></div>
+
 	HL matrix of FxFy & GV
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_FxFy_GV.jpg"/></div>
+
 	Final image.
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/Optical_Flow.jpg"/></div>
+
 	Expected optical flow
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/expected_flow.jpg"/></div>
+
 	Recibstrycted optical flow
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/reconstructed_flow.jpg"/></div>
+
 	
 
 	        python3 trainIG.py
 	
 	Reconstructed Dx image
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/rebuild_picture_Dx.jpg"/></div>
+
 	Expected Dx Image	
-![image](https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg)
+
+<div align=center><img width="250" height="250" src="https://github.com/xiaoruiDu/AI-Competition/blob/master/images/HL_matrix_IG.jpg"/></div>
 
 	Note: 
 
